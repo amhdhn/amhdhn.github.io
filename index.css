@@ -299,7 +299,7 @@ header {
     outline: none;
     border: none;
     border-radius: 5px;
-    font: 14px var(--poppinsFont);
+    font: 12px var(--poppinsFont);
 }
 
 .loadMore {
