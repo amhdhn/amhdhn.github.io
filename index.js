@@ -73,7 +73,7 @@ for (let index = 0; index < 1; index++) {
     viewPage.classList.add('viewPage');
     viewPage.href = webList[index][0];
     viewPage.target = '_blank';
-    viewPage.innerText = 'Load more';
+    viewPage.innerText = 'View Project';
     webPageListItem.appendChild(viewPage);
     webPageList.appendChild(webPageListItem);
 }
