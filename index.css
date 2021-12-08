@@ -169,6 +169,7 @@ header {
 }
 
 .seeMyProject {
+    font: 12.5px var(--poppinsFont);
     outline: none;
     border: none;
     border-radius: 5px;
@@ -177,6 +178,9 @@ header {
     color: #fff;
     position: relative;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .seeMyProject::before {
@@ -290,7 +294,7 @@ header {
 }
 
 .viewPage {
-    height: 45px;
+    height: 40px;
     background-color: #4c3f70;
     display: flex;
     justify-content: center;
