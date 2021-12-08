@@ -221,7 +221,8 @@ header {
 
 /* webPageSection */
 
-.webPageSection {
+.webPageSection,
+.webAppSection {
     display: flex;
     flex-direction: column;
     margin: 40px auto;
@@ -229,14 +230,16 @@ header {
     max-width: 360px;
 }
 
-.webPageHeader {
+.webPageHeader,
+.webAppHeader {
     font: 20px var(--poppinsFont);
     color: #bbb;
     display: flex;
     align-items: center;
 }
 
-.webPageList {
+.webPageList,
+.webAppList {
     border-top: 1px solid rgba(105, 86, 158, .4);
     display: grid;
     justify-content: center;
@@ -245,7 +248,8 @@ header {
     padding-top: 20px;
 }
 
-.webPageListItem {
+.webPageListItem,
+.webAppListItem {
     display: flex;
     flex-direction: column;
     border-radius: 7px;
@@ -256,9 +260,12 @@ header {
     background-color: rgba(158, 140, 207, 0.1);
 }
 
-.pageShow {
+.pageShow,
+.appShow {
     border-radius: 5px;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .pageName {
@@ -306,42 +313,26 @@ header {
     font: 12px var(--poppinsFont);
 }
 
-.loadMore {
+.loadMore,
+.loadMoreApp {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
-    font: 16px var(--poppinsFont);
+    margin: 40px auto 20px;
+    font: 14px var(--poppinsFont);
     color: #999;
-    position: relative;
     height: 40px;
     cursor: pointer;
     transition: color .6s;
+    border-radius: 7px;
+    border: 1px solid rgba(153, 153, 153, .2);
+    width: 150px;
 }
 
-.loadMore:hover {
+.loadMore:hover,
+.loadMoreApp:hover {
     color: #555;
-}
-
-.loadMore::before {
-    height: 1px;
-    width: 30%;
-    position: absolute;
-    content: '';
-    margin-top: 0;
-    background-color: rgba(153, 153, 153, .2);
-    left: 0;
-}
-
-.loadMore::after {
-    height: 1px;
-    width: 30%;
-    position: absolute;
-    content: '';
-    margin-top: 0;
-    background-color: rgba(153, 153, 153, .2);
-    right: 0;
 }
 
 @media screen and (min-width:680px) {
@@ -395,10 +386,12 @@ header {
         max-width: 300px;
     }
     /* webPageSection */
-    .webPageSection {
+    .webPageSection,
+    .webAppSection {
         max-width: 850px;
     }
-    .webPageList {
+    .webPageList,
+    .webAppList {
         display: grid;
         grid-template-columns: 48% 48%;
         justify-content: space-between;
@@ -407,7 +400,8 @@ header {
 }
 
 @media screen and (min-width:900px) {
-    .webPageList {
+    .webPageList,
+    .webAppList {
         grid-template-columns: 31% 31% 31%;
     }
 }
