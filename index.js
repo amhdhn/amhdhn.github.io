@@ -41,11 +41,12 @@ function changeText() {
     }
 }
 const webList = [
-    ['chirp/', 'chirpTemp.jpg', 'Chirp', 'HtmlpopCsspopJavaScript']
+    ['chirp/', 'chirpTemp.jpg', 'Chirp', 'HtmlpopCsspopJavaScript'],
+    ['hosterr/', 'hosterr.jpg', 'Hosterr', 'HtmlpopCsspopJavaScript']
 ];
 
 const webPageList = document.querySelector('.webPageList');
-for (let index = 0; index < 1; index++) {
+for (let index = 0; index < 2; index++) {
     const webPageListItem = document.createElement('div');
     webPageListItem.classList.add('webPageListItem');
     const pageShow = document.createElement('img');
