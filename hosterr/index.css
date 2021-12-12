@@ -119,6 +119,34 @@ header {
     color: #555;
     margin-right: 10px;
     cursor: pointer;
+    position: relative;
+}
+
+.headerIcons:hover:after,
+.headerIcons:hover:before {
+    width: 50%;
+}
+
+.headerIcons::after {
+    width: 0;
+    height: 1px;
+    background-color: #555;
+    bottom: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    transition: width .6s;
+}
+
+.headerIcons::before {
+    width: 0;
+    height: 1px;
+    background-color: #555;
+    bottom: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    transition: width .6s;
 }
 
 .join {
@@ -129,6 +157,7 @@ header {
     border-radius: 5px;
     transition: background-color .6s;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .join:hover {
@@ -177,19 +206,21 @@ header {
     left: 20px;
     width: 80%;
     margin: 0 10%;
-    transition: transform 2s .6s;
 }
 
 .blueShape {
-    transform: rotate(-50deg);
+    animation: blueShapeAnim 2s;
     filter: drop-shadow(0 0 10px rgba(73, 196, 235, 1));
+    transform: rotate(-50deg);
 }
 
 .pinkShape {
+    animation: pinkShapeAnim 1.5s;
     transform: rotate(-35deg);
 }
 
 .purpleShape {
+    animation: purpleShapeAnim 1s;
     transform: rotate(-18deg);
 }
 
@@ -412,5 +443,32 @@ footer {
     .join {
         font-size: 15px;
         padding: 9px 15px;
+    }
+}
+
+@keyframes blueShapeAnim {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-50deg);
+    }
+}
+
+@keyframes pinkShapeAnim {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-35deg);
+    }
+}
+
+@keyframes purpleShapeAnim {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-18deg);
     }
 }
