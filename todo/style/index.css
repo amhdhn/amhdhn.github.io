@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bgColor: #yellow;
+    --clrOne: #555;
+    --clrTwo: #222;
+    --clrThird: rgb(41, 118, 196);
+    --borderColor: rgba(31, 103, 175, 0.3);
+    --poppinsFont: poppins, Arial, Helvetica, sans-serif;
+    --playfair: 'Playfair Display', Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+    background-color: #e9e9e9;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    min-width: 320px;
+}
+
+.supportMobile {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e9e9e9;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.supportMsg {
+    font: 1.2em var(--poppinsFont);
+    color: #111;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.supportIcon {
+    content: "\e001";
+    font: 4em "material icons";
+    color: #888;
+}
+
+
+/* addNewToDo */
+
+.addNewToDo {
+    height: 35px;
+    width: 98%;
+    max-width: 900px;
+    box-sizing: border-box;
+    background-color: #e9e9e9;
+    z-index: 996;
+    margin: 10px auto 0;
+}
+
+.addNewToDo p {
+    background-color: #dddddd;
+    border-radius: 5px;
+    position: relative;
+    font: .95em var(--poppinsFont);
+    color: #000;
+    height: 100%;
+    padding: 0 15px 0 30px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.addNewToDo p::before {
+    position: absolute;
+    left: 0;
+    content: "\e145";
+    font: 1.5em "material icons";
+    margin-left: 5px;
+    transition: transform .6s;
+}
+
+.addNewToDo p:hover::before {
+    transform: rotate(360deg);
+}
+
+
+/* modalContainer */
+
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.315);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    animation: fadein .6s;
+    z-index: 996;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #e9e9e9;
+    width: 100%;
+    max-width: 480px;
+    height: fit-content;
+    margin-top: 35px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(17, 17, 17, 0.884);
+    position: relative;
+}
+
+.modalTitle {
+    font: .95em var(--poppinsFont);
+    color: #222;
+    text-align: center;
+}
+
+.modalInput {
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    height: 45px;
+    padding: 0 10px;
+    font: .85em var(--poppinsFont);
+    color: #222;
+    border-radius: 5px;
+    background-color: rgb(226, 226, 226);
+}
+
+.modalInput::placeholder {
+    color: #333;
+}
+
+.modalSubmit {
+    margin-top: 15px;
+    font: .95em var(--poppinsFont);
+    color: #fff;
+    background-color: rgb(68, 162, 255);
+    outline: none;
+    padding: 10px;
+    transition: background-color .6s;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.modalSubmit:hover {
+    background-color: rgb(30, 128, 226);
+}
+
+.closeModal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font: 1.2em "material icons";
+    color: #000;
+    cursor: pointer;
+}
+
+
+/* toDoSection */
+
+.toDoSection {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 10px auto 0;
+    width: 98%;
+    height: calc(100vh - 80px);
+}
+
+
+/* toDoGridTitles */
+
+.toDoTitleContainer {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.toDoTitle {
+    height: fit-content;
+    height: 40px;
+    font: .9em var(--poppinsFont);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 990;
+}
+
+.notStartedTitle {
+    background-color: #dab9b9;
+    border-radius: 5px 0 0 0;
+}
+
+.inProgressTitle {
+    background-color: #dbdbb3;
+}
+
+.finishedTitle {
+    background-color: #a9c4a9;
+    border-radius: 0 5px 0 0;
+}
+
+
+/* toDoGridContainer */
+
+.toDoGridContainer {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 10px;
+}
+
+.notStarted {
+    background-color: #eccece;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 5px;
+}
+
+.inProgress {
+    background-color: #ececce;
+    display: flex;
+    flex-direction: column;
+}
+
+.finished {
+    background-color: #ceddce;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 5px 0;
+}
+
+.notStarted p {
+    background-color: #eeb0b0 !important;
+}
+
+.inProgress p {
+    background-color: #e6e6a7 !important;
+}
+
+.finished p {
+    background-color: #abddab !important;
+}
+
+.toDoItem {
+    height: 40px;
+    font: .8em var(--poppinsFont);
+    color: #000;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    background-color: rgba(255, 255, 255, 0.712);
+    padding: 0 25px 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    transition: height .6s, margin .6s;
+}
+
+.toDoRemove {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    content: "\e5cd";
+    font: 1.4em "material icons";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notStarted .toDoRemove {
+    background-color: #eb8989 !important;
+}
+
+.inProgress .toDoRemove {
+    background-color: #e4e487 !important;
+}
+
+.finished .toDoRemove {
+    background-color: #9ad69a !important;
+}
+
+
+/* customScrollBar */
+
+.customScrollBar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.customScrollBar::-webkit-scrollbar-track {
+    background: #e9e9e9;
+}
+
+.customScrollBar::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.customScrollBar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+    <section class="addNewToDo">
+        <p>Add new ToDo</p>
+    </section>
+
+    <section class="toDoSection">
+
+        <div class="toDoTitleContainer">
+            <p class="toDoTitle notStartedTitle">Not started</p>
+            <p class="toDoTitle inProgressTitle">In porgress</p>
+            <p class="toDoTitle finishedTitle">Finished</p>
+        </div>
+
+        <deiv class="toDoGridContainer customScrollBar">
+            <div class="notStarted" data-code="1"></div>
+            <div class="inProgress" data-code="2"></div>
+            <div class="finished" data-code="3"></div>
+        </deiv>
+
+    </section>
+
+    <section class="modalContainer">
+        <div class="modal" onclick="preventClick(event)">
+            <p class="modalTitle">Add new To Do</p>
+            <input type="text" class="modalInput" placeholder="Enter ToDo name ... ">
+            <button class="modalSubmit">Submit</button>
+            <span class="closeModal">close</span>
+        </div>
+    </section>
+
+    <section class="supportMobile" onclick="preventClick(event)">
+        <p class="supportIcon">error_outline</p>
+        <p class="supportMsg">Sorry ,<br>This site doesnt support mobile browser</p>
+    </section>
+    <script src="script/index.js"></script>
+</body>
+
+</html>
