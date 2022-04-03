@@ -85,7 +85,7 @@ const appList = [
 ];
 
 const webAppList = document.querySelector('.webAppList');
-for (let index = 0; index < 1; index++) {
+for (let index = 0; index < appList.length; index++) {
     const webAppListItem = document.createElement('div');
     webAppListItem.classList.add('webAppListItem');
     const appShow = document.createElement('img');
