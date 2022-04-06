@@ -68,7 +68,7 @@ html {
     width: 100px;
     margin-top: 20px;
     transition: background-image .6s;
-    background-image: url(/Assets/normal.png);
+    background-image: url(../Assets/normal.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
