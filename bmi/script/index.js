@@ -49,7 +49,7 @@ function setElementData() {
     let bmiInfo = getBmiInfo(bmiResult);
     contentElem.style.backgroundColor = bmiInfo.bg;
     resultInfoElem.innerText = bmiInfo.title;
-    resultImg.style.backgroundImage = `url(../Assets/${bmiInfo.src}.png)`;
+    resultImg.style.backgroundImage = `url(./Assets/${bmiInfo.src}.png)`;
 
     saveInStorage();
 }
