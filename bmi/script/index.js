@@ -19,8 +19,8 @@ let dataObject = {
     fatC3: { bg: "rgba(211, 91, 100,.62)", src: "fatC3", title: "Obesity Class 3" }
 }
 
-heightRange.addEventListener("change", heightHandler);
-weightRange.addEventListener("change", weightHandler);
+heightRange.addEventListener("input", heightHandler);
+weightRange.addEventListener("input", weightHandler);
 window.addEventListener("load", initializeData)
 
 
