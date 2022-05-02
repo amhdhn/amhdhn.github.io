@@ -246,14 +246,14 @@ function generatePossibleMoveInZeroNumber(row, column) {
 function createPresonElement() {
     personElem = document.createElement("img");
     personElem.classList.add("person");
-    personElem.src = "https://github.com/amhdhn/amhdhn.github.io/blob/amhdhn/maze/Assets/person.svg";
+    personElem.src = "Assets/person.svg";
 
 }
 
 function createDoorElement() {
     let doorElem = document.createElement("img");
     doorElem.classList.add("door");
-    doorElem.src = "https://github.com/amhdhn/amhdhn.github.io/blob/amhdhn/maze/Assets/door.svg";
+    doorElem.src = "Assets/door.svg";
 
     let exitPosition = document.querySelector(`.dot${rowColumnNumber-1}-${rowColumnNumber-1}`);
     exitPosition.appendChild(doorElem);
