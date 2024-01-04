@@ -103,21 +103,21 @@ function shortText(text, len) {
 
   return text.slice(0, len) + " ...";
 }
-function changeTime(newValue, mode) {
-  if (mode === "step") {
-    const currentTime = customMusicPlayer.currentTime;
-    if (newValue > 0 && newValue + currentTime < customMusicPlayer.duration) {
-      customMusicPlayer.currentTime = currentTime + newValue;
-    } else if (newValue < 0 && currentTime - newValue > 5) {
-      customMusicPlayer.currentTime = currentTime + newValue;
-    }
-  } else {
+function changeTime(newValue) {
+  if (!customMusicPlayer.duration) {
+    return;
+  }
+  const currentTime = customMusicPlayer.currentTime;
+  if (newValue > 0 && newValue + currentTime < customMusicPlayer.duration) {
+    customMusicPlayer.currentTime = currentTime + newValue;
+  } else if (newValue < 0 && currentTime - newValue > 5) {
+    customMusicPlayer.currentTime = currentTime + newValue;
   }
 }
 function changeMusic(step) {
+  progressBar.style.width = `0px`;
   playBtn.classList.remove("play");
   customMusicPlayer.pause();
-  progressBar.style.width = `0px`;
   totalTime.innerText = "00:00";
   timePassed.innerText = "00:00";
   playerIndex = playerIndex + step;
@@ -163,6 +163,9 @@ function repeatChangeHandler(element) {
   element.classList.toggle("repeatOn");
 }
 function changeTimeHandler(e) {
+  if (!customMusicPlayer.duration) {
+    return;
+  }
   let posX;
   if (e.type == "touchend") {
     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
