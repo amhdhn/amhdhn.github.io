@@ -119,7 +119,7 @@
     display: flex;
 }
 .playerSection.gone{
-    transform: translateY(200%);
+    transform: translateY(250%);
     transition: transform .4s;
 }
 .customMusicPlayer{
@@ -298,9 +298,6 @@
         width: unset;
         min-width: 250px;
         background-color: var(--blackClr3);
-    }
-    .playerSection.gone{
-        transform: translateY(250%);
     }
 }
 @media screen and (min-width:769px) {
