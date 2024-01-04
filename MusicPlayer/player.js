@@ -117,7 +117,7 @@ function changeTime(newValue, mode) {
 function changeMusic(step) {
   playBtn.classList.remove("play");
   customMusicPlayer.pause();
-  customMusicPlayer.currentTime = 0;
+  progressBar.style.width = `0px`;
   totalTime.innerText = "00:00";
   timePassed.innerText = "00:00";
   playerIndex = playerIndex + step;
