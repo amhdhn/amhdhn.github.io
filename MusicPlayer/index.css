@@ -1,0 +1,41 @@
+:root{
+    --bgClr:#fff;
+    
+    
+}
+html,body{
+    background-color: var(--bgClr);
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+/* general class */
+.container{
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.musicList{
+    padding: 5px;
+}
+.musicItem{
+    padding: 15px;
+    border-radius: 7px;
+    background-color: var(--blackOp3);
+}
+.playListPlayBtn{
+    outline: none;
+    border: none;
+    height: 40px;
+    background-color: dodgerblue;
+    border-radius: 7px;
+    color: var(--bgClr);
+    cursor: pointer;
+    transition: background-color .6s;
+}
+.playListPlayBtn:hover{
+    background-color: rgb(36, 123, 211);
+}
